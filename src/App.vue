@@ -6,8 +6,22 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
   import FooterGuide from "./components/FooterGuide/FooterGuide.vue";
+  // import {reqFoodTypes} from "../../Vuex/TakeOut/src/api";
+  // import {reqFoodCategorys} from "../../Vuex/TakeOut/src/api";
+
+
   export default {
+    mounted() {
+      // this.$store.dispatch('getAddress')
+      this.getAddress()
+      this.getUserInfo()
+    },
+
+    methods:{
+      ...mapActions(['getAddress','getUserInfo'])
+    },
     components:{
       FooterGuide
     }
